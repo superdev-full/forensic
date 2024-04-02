@@ -1,0 +1,16 @@
+_01_	i	si	1	i	i
+b01p	bipa	bipa	0	bipa	bipa
+f02t	feta	feta	0	feta	feta
+s02t	seta	seta	0	seta	seta
+T03t	zata	zata	0	Tata	Tata
+x03t	jata	jata	0	xata	xata
+_04_	o	no	1	o	o
+b04p	bopa	bopa	0	bopa	bopa
+s05t	suta	suta	0	suta	suta
+x05t	juta	juta	0	xuta	xuta
+_06_	ai	hay	1	ai	ai
+b07p	baupa	baupa	0	baupa	baupa
+_08_	ei	rey	1	ei	ei
+b08p	beipa	beipa	0	beipa	beipa
+_09_	ie	pie	1	ie	ie
+b06p	biepa	biepa	0	biepa	biepa

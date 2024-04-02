@@ -1,0 +1,7 @@
+Cada una de las frases que leerás, tiene la forma: "en X tienes X".
+
+Por ejemplo, "en gato tienes gato"
+
+
+Normalmente las dos palabras X serán la misma palabra,
+de no ser así, la segunda estará escrita en rojo.

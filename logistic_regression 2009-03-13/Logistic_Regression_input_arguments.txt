@@ -1,0 +1,12 @@
+lang_label	English
+stimcols	{'listener' 'spec' 'dur'}
+respcols	{'/I/' '/i/'}
+models	{'spec' 'dur' 'spec+dur'}
+default_model	3
+save_coefs	true
+compareG2	true
+hyp_pairs	[1 3; 2 3]
+make_plots	true
+colours	{'r' 'g'}
+orientation	[45 45]
+axis_labels	{'spectral properties' 'duration'}

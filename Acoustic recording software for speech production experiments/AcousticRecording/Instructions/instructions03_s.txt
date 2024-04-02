@@ -1,0 +1,9 @@
+Oirás un tono e inmediatamente después verás una frase en la pantalla.
+
+Primero, lee la frase con la vista. Asegúrate que sabes como vas a pronunciar
+la última palabra antes de empezar hablar.
+
+Lee la frase en voz alta.
+
+Pon un énfasis ligero en la última palabra como si fuera la respuesta
+a la pregunta: ¿Qué tienes en X?

@@ -1,0 +1,32 @@
+/Users/nearey/NeareyMLTools/FtrackTest/jnk.m
+/Users/nearey/NeareyMLTools/GraphTools/subplot_tight.m
+/Users/nearey/NeareyMLTools/GraphTools/subplotrc.m
+/Users/nearey/NeareyMLTools/SiganDevel/watchlevel.m
+/Users/nearey/NeareyMLTools/Sigantools/alpc2sgm.m
+/Users/nearey/NeareyMLTools/filetools/fig.m
+/Users/nearey/NeareyMLTools/filetools/fixpath.m
+/Users/nearey/NeareyMLTools/filetools/parsepath.m
+/Volumes/AlphaFW78/Tracker4XPBeta0p1/TNtracker~zip Folder/anbysynchk3.m
+/Volumes/AlphaFW78/Tracker4XPBeta0p1/TNtracker~zip Folder/coswin.m
+/Volumes/AlphaFW78/Tracker4XPBeta0p1/TNtracker~zip Folder/dbgtracker4xshowtracks.m
+/Volumes/AlphaFW78/Tracker4XPBeta0p1/TNtracker~zip Folder/fbaRoot.m
+/Volumes/AlphaFW78/Tracker4XPBeta0p1/TNtracker~zip Folder/fbaplot.m
+/Volumes/AlphaFW78/Tracker4XPBeta0p1/TNtracker~zip Folder/fcasc.m
+/Volumes/AlphaFW78/Tracker4XPBeta0p1/TNtracker~zip Folder/getwin.m
+/Volumes/AlphaFW78/Tracker4XPBeta0p1/TNtracker~zip Folder/lagwin.m
+/Volumes/AlphaFW78/Tracker4XPBeta0p1/TNtracker~zip Folder/medsmoterp.m
+/Volumes/AlphaFW78/Tracker4XPBeta0p1/TNtracker~zip Folder/mgftrackmed.m
+/Volumes/AlphaFW78/Tracker4XPBeta0p1/TNtracker~zip Folder/parse.m
+/Volumes/AlphaFW78/Tracker4XPBeta0p1/TNtracker~zip Folder/pausemsg.m
+/Volumes/AlphaFW78/Tracker4XPBeta0p1/TNtracker~zip Folder/playsc.m
+/Volumes/AlphaFW78/Tracker4XPBeta0p1/TNtracker~zip Folder/playsigsafe.m
+/Volumes/AlphaFW78/Tracker4XPBeta0p1/TNtracker~zip Folder/plotsgm.m
+/Volumes/AlphaFW78/Tracker4XPBeta0p1/TNtracker~zip Folder/r2lpc.m
+/Volumes/AlphaFW78/Tracker4XPBeta0p1/TNtracker~zip Folder/sgm2alpcsel.m
+/Volumes/AlphaFW78/Tracker4XPBeta0p1/TNtracker~zip Folder/tracker4xpDemo.m
+/Volumes/AlphaFW78/Tracker4XPBeta0p1/TNtracker~zip Folder/tracker4xpOneFile.m
+/Volumes/AlphaFW78/Tracker4XPBeta0p1/TNtracker~zip Folder/tsfftsgm.m
+/Volumes/AlphaFW78/Tracker4XPBeta0p1/TNtracker~zip Folder/uigetpath.m
+/Volumes/AlphaFW78/Tracker4XPBeta0p1/TNtracker~zip Folder/vec.m
+/Volumes/AlphaFW78/Tracker4XPBeta0p1/TNtracker~zip Folder/wavread.m
+/Volumes/AlphaFW78/Tracker4XPBeta0p1/TNtracker~zip Folder/wtregA.m

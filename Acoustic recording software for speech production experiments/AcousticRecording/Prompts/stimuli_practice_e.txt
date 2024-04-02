@@ -1,0 +1,16 @@
+h01t	heat	meat	0	hit	hit
+h02d	hid	kid	0	hId	hId
+b03P	bapa	paper	1	bep@	bep«
+_04_	e	met	1	E	E
+h05t	hat	mat	0	h{t	hQt
+h06d	hud	mud	0	hVd	hÃd
+b07P	boppa	hopper	1	bQp@	bp«
+_08_	aw	law	0	O	
+h09t	hote	mote	0	hot	hot
+h10d	hood	could	0	hUd	hUd
+b11P	boopa	super	1	bup@	bup«
+_13_	ai	high	0	aI	aI
+h14t	hout	lout	0	haUt	haUt
+h17d	hoyd	lloyd	0	hOId	hId
+b18P	burpa	sherpa	0	b3~rp@	bÎÕrp«
+_19_	ar	car	0	Ar	Ar

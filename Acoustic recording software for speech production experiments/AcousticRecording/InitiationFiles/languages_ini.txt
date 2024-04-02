@@ -1,0 +1,13 @@
+e	s
+	en
+sounds like	tienes
+	
+Next	Siguiente
+Play	Escuchar
+Stop Playing	Grabar
+Stop	Parar
+Times	Times
+40	40
+.1	.1
+SILDoulos IPA93	SILDoulos IPA93
+L	L

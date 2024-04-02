@@ -1,0 +1,442 @@
+From: <Saved by Windows Internet Explorer 7>
+Subject: Linear logistic regression fusion
+Date: Thu, 22 Nov 2007 14:41:39 +1100
+MIME-Version: 1.0
+Content-Type: text/html;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://www.dsp.sun.ac.za/~nbrummer/focal/fusion/msefusion/index.htm
+X-MimeOLE: Produced By Microsoft MimeOLE V6.00.3790.4133
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML xmlns=3D"http://www.w3.org/TR/REC-html40" xmlns:v =3D=20
+"urn:schemas-microsoft-com:vml" xmlns:o =3D=20
+"urn:schemas-microsoft-com:office:office" xmlns:w =3D=20
+"urn:schemas-microsoft-com:office:word"><HEAD><TITLE>Linear logistic =
+regression fusion</TITLE>
+<META http-equiv=3DContent-Type content=3D"text/html; =
+charset=3Diso-8859-1">
+<META content=3DWord.Document name=3DProgId>
+<META content=3D"MSHTML 6.00.5730.13" name=3DGENERATOR>
+<META content=3D"Microsoft Word 9" name=3DOriginator><LINK=20
+href=3D"./index_files/filelist.xml" rel=3DFile-List><LINK=20
+href=3D"./index_files/editdata.mso" rel=3DEdit-Time-Data><LINK=20
+href=3D"./index_files/oledata.mso" rel=3DOLE-Object-Data><!--[if !mso]>
+<STYLE>v\:* {
+	BEHAVIOR: url(#default#VML)
+}
+o\:* {
+	BEHAVIOR: url(#default#VML)
+}
+w\:* {
+	BEHAVIOR: url(#default#VML)
+}
+.shape {
+	BEHAVIOR: url(#default#VML)
+}
+</STYLE>
+<![endif]--><!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>Brummer</o:Author>
+  <o:LastAuthor>Niko Brummer</o:LastAuthor>
+  <o:Revision>15</o:Revision>
+  <o:TotalTime>183</o:TotalTime>
+  <o:Created>2005-07-13T07:47:00Z</o:Created>
+  <o:LastSaved>2005-09-01T18:30:00Z</o:LastSaved>
+  <o:Pages>2</o:Pages>
+  <o:Words>594</o:Words>
+  <o:Characters>3390</o:Characters>
+  <o:Company>Spescom Datavoice (PTY) LTD</o:Company>
+  <o:Lines>28</o:Lines>
+  <o:Paragraphs>6</o:Paragraphs>
+  <o:CharactersWithSpaces>4163</o:CharactersWithSpaces>
+  <o:Version>9.3821</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]-->
+<STYLE>@page Section1 {size: 595.3pt 841.9pt; margin: 72.0pt 90.0pt =
+72.0pt 90.0pt; mso-header-margin: 35.4pt; mso-footer-margin: 35.4pt; =
+mso-paper-source: 0; }
+P.MsoNormal {
+	FONT-SIZE: 12pt; MARGIN: 0mm 0mm 0pt; FONT-FAMILY: "Times New Roman"; =
+mso-style-parent: ""; mso-pagination: widow-orphan; =
+mso-fareast-font-family: "Times New Roman"
+}
+LI.MsoNormal {
+	FONT-SIZE: 12pt; MARGIN: 0mm 0mm 0pt; FONT-FAMILY: "Times New Roman"; =
+mso-style-parent: ""; mso-pagination: widow-orphan; =
+mso-fareast-font-family: "Times New Roman"
+}
+DIV.MsoNormal {
+	FONT-SIZE: 12pt; MARGIN: 0mm 0mm 0pt; FONT-FAMILY: "Times New Roman"; =
+mso-style-parent: ""; mso-pagination: widow-orphan; =
+mso-fareast-font-family: "Times New Roman"
+}
+H1 {
+	FONT-SIZE: 16pt; MARGIN: 12pt 0mm 3pt; FONT-FAMILY: Arial; =
+mso-pagination: widow-orphan; mso-style-next: Normal; mso-outline-level: =
+1; mso-font-kerning: 16.0pt
+}
+H2 {
+	FONT-SIZE: 14pt; MARGIN: 12pt 0mm 3pt; FONT-STYLE: italic; FONT-FAMILY: =
+Arial; mso-pagination: widow-orphan; mso-style-next: Normal; =
+mso-outline-level: 2
+}
+H3 {
+	FONT-SIZE: 13pt; MARGIN: 12pt 0mm 3pt; FONT-FAMILY: Arial; =
+mso-pagination: widow-orphan; mso-style-next: Normal; mso-outline-level: =
+3
+}
+A:link {
+	COLOR: blue; TEXT-DECORATION: underline; text-underline: single
+}
+SPAN.MsoHyperlink {
+	COLOR: blue; TEXT-DECORATION: underline; text-underline: single
+}
+A:visited {
+	COLOR: purple; TEXT-DECORATION: underline; text-underline: single
+}
+SPAN.MsoHyperlinkFollowed {
+	COLOR: purple; TEXT-DECORATION: underline; text-underline: single
+}
+DIV.Section1 {
+	page: Section1
+}
+OL {
+	MARGIN-BOTTOM: 0mm
+}
+UL {
+	MARGIN-BOTTOM: 0mm
+}
+</STYLE>
+<!--[if gte mso 9]><xml>
+ <o:shapedefaults v:ext=3D"edit" spidmax=3D"1031"/>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext=3D"edit">
+  <o:idmap v:ext=3D"edit" data=3D"1"/>
+ </o:shapelayout></xml><![endif]--></HEAD>
+<BODY lang=3DEN-US style=3D"tab-interval: 36.0pt" vLink=3Dpurple =
+link=3Dblue>
+<DIV class=3DSection1>
+<H1>Linear Minimum-MSE Fusion</H1>
+<P class=3DMsoNormal>This is a fusion of multiple component systems (to =
+improve=20
+discriminative ability). The mean-squared-error criterion forms a =
+<I>proper=20
+scoring rule</I>. This suggests that this type of fusion should (just =
+like=20
+logistic regression fusion) result in well-calibrated scores that can =
+act as=20
+detection-log-likelihood-ratios. But although MSE calibration is better =
+than=20
+none at all, it is not as good as calibration by logistic regression. =
+Here are=20
+some <A=20
+href=3D"http://www.dsp.sun.ac.za/~nbrummer/focal/fusion/comparison.htm">e=
+xperimental=20
+comparisons</A>. </P>
+<H2>Linear fusion</H2>
+<P class=3DMsoNormal>Given <I>N</I> speaker detectors which output the =
+scores=20
+(<I>s<SUB>1j&nbsp;</SUB>,s<SUB>2j&nbsp;</SUB>,=85,s<SUB>Nj&nbsp;</SUB></I=
+>)<I>=20
+</I>for a detection trial<I> j,</I> a <I>linear fusion</I> of these =
+scores=20
+is:</P>
+<P class=3DMsoNormal><![if =
+!supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></P>
+<P class=3DMsoNormal style=3D"MARGIN-LEFT: 36pt"><I>f<SUB>j</SUB> =3D =
+</I><I><SPAN=20
+style=3D"FONT-FAMILY: Symbol; mso-ascii-font-family: 'Times New Roman'; =
+mso-hansi-font-family: 'Times New Roman'; mso-char-type: symbol; =
+mso-symbol-font-family: Symbol"><SPAN=20
+style=3D"mso-char-type: symbol; mso-symbol-font-family: =
+Symbol">a</SPAN></SPAN><SUB>0</SUB>=20
++ </I><I><SPAN=20
+style=3D"FONT-FAMILY: Symbol; mso-ascii-font-family: 'Times New Roman'; =
+mso-hansi-font-family: 'Times New Roman'; mso-char-type: symbol; =
+mso-symbol-font-family: Symbol"><SPAN=20
+style=3D"mso-char-type: symbol; mso-symbol-font-family: =
+Symbol">a</SPAN></SPAN><SUB>1</SUB>s<SUB>1j</SUB>=20
++ </I><I><SPAN=20
+style=3D"FONT-FAMILY: Symbol; mso-ascii-font-family: 'Times New Roman'; =
+mso-hansi-font-family: 'Times New Roman'; mso-char-type: symbol; =
+mso-symbol-font-family: Symbol"><SPAN=20
+style=3D"mso-char-type: symbol; mso-symbol-font-family: =
+Symbol">a</SPAN></SPAN><SUB>2</SUB>s<SUB>2j</SUB>=20
++ =85 + </I><I><SPAN=20
+style=3D"FONT-FAMILY: Symbol; mso-ascii-font-family: 'Times New Roman'; =
+mso-hansi-font-family: 'Times New Roman'; mso-char-type: symbol; =
+mso-symbol-font-family: Symbol"><SPAN=20
+style=3D"mso-char-type: symbol; mso-symbol-font-family: =
+Symbol">a</SPAN></SPAN><SUB>N</SUB>s<SUB>Nj<o:p></o:p></SUB></I></P>
+<P class=3DMsoNormal><![if =
+!supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></P>
+<P class=3DMsoNormal>The constant <I><SPAN=20
+style=3D"FONT-FAMILY: Symbol; mso-ascii-font-family: 'Times New Roman'; =
+mso-hansi-font-family: 'Times New Roman'; mso-char-type: symbol; =
+mso-symbol-font-family: Symbol"><SPAN=20
+style=3D"mso-char-type: symbol; mso-symbol-font-family: =
+Symbol">a</SPAN></SPAN><SUB>0</SUB></I>=20
+does not contribute to the discriminative ability of the fusion, but it =
+can=20
+improve the <I>calibration</I> of the fused score. </P>
+<H2>Training the fusion</H2>
+<P class=3DMsoNormal>To <I>train</I> the fusion parameters, we need a =
+set of=20
+supervised training scores, and an objective defined in terms of these =
+scores=20
+and the fusion weights. Training consists of optimizing this objective. =
+</P>
+<H3>Training scores</H3>
+<P class=3DMsoNormal>We need scores for all component systems as =
+calculated on a=20
+set of supervised detection trials. Let:</P>
+<P class=3DMsoNormal><SPAN style=3D"mso-spacerun: yes"></SPAN>&nbsp;</P>
+<P class=3DMsoNormal style=3D"MARGIN-LEFT: 36pt">[<I>s<SUB>ij</SUB></I>] =
+be an=20
+<I>N</I> by <I>K </I>matrix of scores that each of the <I>N</I> =
+component=20
+systems calculated for each of <I>K</I> target trials. </P>
+<P class=3DMsoNormal style=3D"MARGIN-LEFT: 36pt">[<I>r<SUB>ij</SUB></I>] =
+be an=20
+<I>N</I> by <I>L </I>matrix of scores that each of the <I>N</I> =
+component=20
+systems calculated for each of <I>L</I> non-target trials. </P>
+<P class=3DMsoNormal><![if =
+!supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></P>
+<P class=3DMsoNormal>The selection of these training trials is important =
+and is=20
+subject to many considerations.</P>
+<H3>Mean-squared-error objective</H3>
+<P class=3DMsoNormal>We use a mean-squared-error objective (also known =
+as the=20
+Brier score) that is normalized with respect to the proportion of =
+<I>target</I>=20
+trials to <I>non-target</I> trials (<I>K:L</I>), but which is then =
+weighted with=20
+respect to a given synthetic prior, <I>P</I>. The objective is stated in =
+terms=20
+of a <I>cost, </I>which must be <I>minimized</I>:</P>
+<P class=3DMsoNormal><![if =
+!supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></P>
+<P class=3DMsoNormal style=3D"TEXT-INDENT: 36pt"><SPAN=20
+style=3D"mso-text-raise: -15.0pt"><!--[if gte vml 1]><v:shapetype =
+id=3D_x0000_t75=20
+coordsize =3D "21600,21600" o:preferrelative =3D "t" o:spt =3D "75" =
+filled =3D "f"=20
+stroked =3D "f" path =3D " m@4@5 l@4@11@9@11@9@5 xe"><v:stroke joinstyle =
+=3D=20
+"miter"></v:stroke><v:formulas><v:f eqn =3D=20
+"if lineDrawn pixelLineWidth 0 "></v:f><v:f eqn =3D "sum @0 1 0 =
+"></v:f><v:f eqn =3D=20
+"sum 0 0 @1 "></v:f><v:f eqn =3D "prod @2 1 2 "></v:f><v:f eqn =3D=20
+"prod @3 21600 pixelWidth "></v:f><v:f eqn =3D=20
+"prod @3 21600 pixelHeight "></v:f><v:f eqn =3D "sum @0 0 1 "></v:f><v:f =
+eqn =3D=20
+"prod @6 1 2 "></v:f><v:f eqn =3D "prod @7 21600 pixelWidth "></v:f><v:f =
+eqn =3D=20
+"sum @8 21600 0 "></v:f><v:f eqn =3D "prod @7 21600 pixelHeight =
+"></v:f><v:f eqn =3D=20
+"sum @10 21600 0 "></v:f></v:formulas><v:path o:extrusionok =3D "f"=20
+gradientshapeok =3D "t" o:connecttype =3D "rect"></v:path><o:lock =
+aspectratio=3D"t"=20
+v:ext=3D"edit"></o:lock></v:shapetype><v:shape id=3D_x0000_i1030=20
+style=3D"WIDTH: 363.6pt; HEIGHT: 34.8pt" o:ole=3D"" type =3D =
+"#_x0000_t75" coordsize =3D=20
+"21600,21600"><v:imagedata o:title=3D"" src =3D=20
+"./index_files/image001.wmz"></v:imagedata></v:shape><![endif]--><![if =
+!vml]><img border=3D0 width=3D485 height=3D46
+src=3D"./index_files/image002.gif" =
+v:shapes=3D"_x0000_i1030"><![endif]><!--[if gte mso 9]><xml>
+ <o:OLEObject Type=3D"Embed" ProgID=3D"Equation.3" =
+ShapeID=3D"_x0000_i1030"
+  DrawAspect=3D"Content" ObjectID=3D"_1187111794">
+ </o:OLEObject>
+</xml><![endif]--></SPAN></P>
+<P class=3DMsoNormal><![if =
+!supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></P>
+<P class=3DMsoNormal>where the fused <I>target</I> and <I>non-target</I> =
+scores=20
+are respectively: </P>
+<P class=3DMsoNormal><![if =
+!supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></P>
+<P class=3DMsoNormal><SPAN=20
+style=3D"mso-tab-count: =
+1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=20
+</SPAN><SPAN style=3D"mso-text-raise: -14.0pt"><!--[if gte vml =
+1]><v:shape=20
+id=3D_x0000_i1026 style=3D"WIDTH: 178.8pt; HEIGHT: 34.2pt" o:ole=3D"" =
+type =3D=20
+"#_x0000_t75" coordsize =3D "21600,21600"><v:imagedata o:title=3D"" src =
+=3D=20
+"./index_files/image003.wmz"></v:imagedata></v:shape><![endif]--><![if =
+!vml]><img border=3D0 width=3D238 height=3D46
+src=3D"./index_files/image004.gif" =
+v:shapes=3D"_x0000_i1026"><![endif]></SPAN><!--[if gte mso 9]><xml>
+ <o:OLEObject Type=3D"Embed" ProgID=3D"Equation.3" =
+ShapeID=3D"_x0000_i1026"
+  DrawAspect=3D"Content" ObjectID=3D"_1187111795">
+ </o:OLEObject>
+</xml><![endif]--></P>
+<P class=3DMsoNormal><![if =
+!supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></P>
+<P class=3DMsoNormal>and where</P>
+<P class=3DMsoNormal><![if =
+!supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></P>
+<P class=3DMsoNormal><SPAN=20
+style=3D"mso-tab-count: =
+1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=20
+</SPAN><SPAN style=3D"mso-text-raise: -12.0pt"><!--[if gte vml =
+1]><v:shape=20
+id=3D_x0000_i1027 style=3D"WIDTH: 228.6pt; HEIGHT: 31.2pt" o:ole=3D"" =
+type =3D=20
+"#_x0000_t75" coordsize =3D "21600,21600"><v:imagedata o:title=3D"" src =
+=3D=20
+"./index_files/image005.wmz"></v:imagedata></v:shape><![endif]--><![if =
+!vml]><img border=3D0 width=3D305 height=3D41
+src=3D"./index_files/image006.gif" =
+v:shapes=3D"_x0000_i1027"><![endif]></SPAN><!--[if gte mso 9]><xml>
+ <o:OLEObject Type=3D"Embed" ProgID=3D"Equation.3" =
+ShapeID=3D"_x0000_i1027"
+  DrawAspect=3D"Content" ObjectID=3D"_1187111796">
+ </o:OLEObject>
+</xml><![endif]--></P>
+<P class=3DMsoNormal><![if =
+!supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></P>
+<H3>Optimization</H3>
+<P class=3DMsoNormal>Many methods can be used to minimize this =
+objective. We used=20
+a conjugate gradient algorithm, the details of which have been nicely =
+worked out=20
+(for logistic regression) by Tom Minka at <A=20
+href=3D"http://www.stat.cmu.edu/~minka/papers/logreg/">http://www.stat.cm=
+u.edu/~minka/papers/logreg/</A>.=20
+We adapted Minka=92s code to cater for the MSE criterion. We found that =
+the MSE=20
+criterion takes longer to converge than the logistic regression =
+criterion. It=20
+may even be the case that the MSE criterion does not lead to a convex =
+objective=20
+and that there may be local sup-optimal minima. We found it is good =
+practice to=20
+first find the fusion weights via <A=20
+href=3D"http://www.dsp.sun.ac.za/~nbrummer/focal/fusion/llrfusion/index.h=
+tm">logistic=20
+regression</A> and then to use these weights as a starting point for MSE =
+
+fusion.</P>
+<P class=3DMsoNormal><![if =
+!supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></P>
+<H2>Training Software</H2>
+<P class=3DMsoNormal>The software is available in <A=20
+href=3D"http://www.dsp.sun.ac.za/~nbrummer/focal/matlab/FoCal.zip">FoCal.=
+zip</A>.=20
+To train the weights, first use <A=20
+href=3D"http://www.dsp.sun.ac.za/~nbrummer/focal/matlab/fusion/train_llr_=
+fusion.m">train_llr_fusion.m</A>=20
+to obtain a starting point. Then use <A=20
+href=3D"http://www.dsp.sun.ac.za/~nbrummer/focal/matlab/fusion/train_mse_=
+fusion.m">train_mse_fusion.m</A>.=20
+</P>
+<P class=3DMsoNormal><![if =
+!supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></P>
+<P class=3DMsoNormal>The MSE criterion is more sensitive to the =
+prior-weighting.=20
+Choose this parameter according to your intended application. You may =
+use <A=20
+href=3D"http://www.dsp.sun.ac.za/~nbrummer/focal/matlab/utils/effective_p=
+rior.m">effective_prior.m</A>=20
+for this purpose.</P>
+<P class=3DMsoNormal><![if =
+!supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></P>
+<P class=3DMsoNormal>See the comments in the code for further usage=20
+instructions.</P>
+<P class=3DMsoNormal><![if =
+!supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></P>
+<H2>Does it work?</H2>
+<P class=3DMsoNormal>The success of the fusion depends on the available =
+component=20
+systems and on the selection of the training scores. To test whether =
+this fusion=20
+works, test it on set of test scores, which is independent of the =
+training=20
+scores. On the test data, to:</P>
+<P class=3DMsoNormal=20
+style=3D"MARGIN-LEFT: 38.5pt; TEXT-INDENT: -18pt; mso-list: l0 level1 =
+lfo2; tab-stops: list 38.5pt"><![if !supportLists]><SPAN=20
+style=3D"FONT-FAMILY: Symbol">-<SPAN=20
+style=3D"FONT: 7pt 'Times New =
+Roman'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=20
+</SPAN></SPAN><![endif]>judge discrimination:</P>
+<P class=3DMsoNormal=20
+style=3D"MARGIN-LEFT: 72pt; TEXT-INDENT: -18pt; mso-list: l0 level2 =
+lfo2; tab-stops: list 72.0pt"><![if !supportLists]><SPAN=20
+style=3D"FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New =
+Roman'">o<SPAN=20
+style=3D"FONT: 7pt 'Times New Roman'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=20
+</SPAN></SPAN><![endif]>plot DET-curves</P>
+<P class=3DMsoNormal=20
+style=3D"MARGIN-LEFT: 72pt; TEXT-INDENT: -18pt; mso-list: l0 level2 =
+lfo2; tab-stops: list 72.0pt"><![if !supportLists]><SPAN=20
+style=3D"FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New =
+Roman'">o<SPAN=20
+style=3D"FONT: 7pt 'Times New Roman'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=20
+</SPAN></SPAN><![endif]>calculate =91minimum C<SUB>DET</SUB>=92 (if =
+optimizing for=20
+the NIST SRE)</P>
+<P class=3DMsoNormal=20
+style=3D"MARGIN-LEFT: 72pt; TEXT-INDENT: -18pt; mso-list: l0 level2 =
+lfo2; tab-stops: list 72.0pt"><![if !supportLists]><SPAN=20
+style=3D"FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New =
+Roman'">o<SPAN=20
+style=3D"FONT: 7pt 'Times New Roman'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=20
+</SPAN></SPAN><![endif]>calculate <A=20
+href=3D"http://www.dsp.sun.ac.za/~nbrummer/focal/matlab/cllr/min_cllr.m">=
+min_cllr.m</A>=20
+(if optimizing for general applications)</P>
+<P class=3DMsoNormal=20
+style=3D"MARGIN-LEFT: 38.5pt; TEXT-INDENT: -18pt; mso-list: l0 level1 =
+lfo2; tab-stops: list 38.5pt"><![if !supportLists]><SPAN=20
+style=3D"FONT-FAMILY: Symbol">-<SPAN=20
+style=3D"FONT: 7pt 'Times New =
+Roman'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=20
+</SPAN></SPAN><![endif]>judge <A=20
+href=3D"http://www.dsp.sun.ac.za/~nbrummer/focal/cllr/calibration/index.h=
+tm">calibration</A>:</P>
+<P class=3DMsoNormal=20
+style=3D"MARGIN-LEFT: 72pt; TEXT-INDENT: -18pt; mso-list: l0 level2 =
+lfo2; tab-stops: list 72.0pt"><![if !supportLists]><SPAN=20
+style=3D"FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New =
+Roman'">o<SPAN=20
+style=3D"FONT: 7pt 'Times New Roman'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=20
+</SPAN></SPAN><![endif]>plot <A=20
+href=3D"http://www.dsp.sun.ac.za/~nbrummer/focal/matlab/cllr/ape_plot.m">=
+APE-curves</A></P>
+<P class=3DMsoNormal=20
+style=3D"MARGIN-LEFT: 72pt; TEXT-INDENT: -18pt; mso-list: l0 level2 =
+lfo2; tab-stops: list 72.0pt"><![if !supportLists]><SPAN=20
+style=3D"FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New =
+Roman'">o<SPAN=20
+style=3D"FONT: 7pt 'Times New Roman'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=20
+</SPAN></SPAN><![endif]>calculate <A=20
+href=3D"http://www.dsp.sun.ac.za/~nbrummer/focal/matlab/cllr/cllr_cal.m">=
+cllr_cal.m</A></P>
+<P class=3DMsoNormal><![if =
+!supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></P>
+<P class=3DMsoNormal><![if =
+!supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></P>
+<P class=3DMsoNormal><![if =
+!supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></P>
+<P=20
+class=3DMsoNormal><I><![if =
+!supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></I></P>
+<P class=3DMsoNormal><SPAN lang=3DEN-GB style=3D"mso-ansi-language: =
+EN-GB"><A=20
+href=3D"http://www.dsp.sun.ac.za/~nbrummer/focal/index.htm">../../ back =
+to FoCal=20
+Toolkit Home.</A><o:p></o:p></SPAN></P>
+<P class=3DMsoNormal><![if =
+!supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></P>
+<P=20
+class=3DMsoNormal><![if =
+!supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></P></DIV></BODY></HTML>

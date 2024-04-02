@@ -1,0 +1,9 @@
+Each sentence will have the form: "X sounds like Y".
+
+For example, "fish sounds like dish"
+
+In this experiment "sounds like" means "has the same vowel as".
+
+
+Usually the X and Y words will rhyme, but not always.
+If the Y word does not rhyme with the X word, it will appear in red.

@@ -1,0 +1,168 @@
+From: <Saved by Windows Internet Explorer 7>
+Subject: Fusion
+Date: Thu, 22 Nov 2007 14:25:19 +1100
+MIME-Version: 1.0
+Content-Type: text/html;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://www.dsp.sun.ac.za/~nbrummer/focal/fusion/index.htm
+X-MimeOLE: Produced By Microsoft MimeOLE V6.00.3790.4133
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML xmlns=3D"http://www.w3.org/TR/REC-html40" xmlns:v =3D=20
+"urn:schemas-microsoft-com:vml" xmlns:o =3D=20
+"urn:schemas-microsoft-com:office:office" xmlns:w =3D=20
+"urn:schemas-microsoft-com:office:word"><HEAD><TITLE>Fusion</TITLE>
+<META http-equiv=3DContent-Type content=3D"text/html; =
+charset=3Diso-8859-1">
+<META content=3DWord.Document name=3DProgId>
+<META content=3D"MSHTML 6.00.5730.13" name=3DGENERATOR>
+<META content=3D"Microsoft Word 9" name=3DOriginator><LINK=20
+href=3D"./index_files/filelist.xml" rel=3DFile-List><!--[if gte mso =
+9]><xml>
+ <o:DocumentProperties>
+  <o:Author>Brummer</o:Author>
+  <o:LastAuthor>Niko Brummer</o:LastAuthor>
+  <o:Revision>4</o:Revision>
+  <o:TotalTime>1034</o:TotalTime>
+  <o:Created>2005-07-12T14:01:00Z</o:Created>
+  <o:LastSaved>2005-07-18T20:42:00Z</o:LastSaved>
+  <o:Pages>1</o:Pages>
+  <o:Words>187</o:Words>
+  <o:Characters>1069</o:Characters>
+  <o:Company>Spescom Datavoice (PTY) LTD</o:Company>
+  <o:Lines>8</o:Lines>
+  <o:Paragraphs>2</o:Paragraphs>
+  <o:CharactersWithSpaces>1312</o:CharactersWithSpaces>
+  <o:Version>9.3821</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]-->
+<STYLE>@page Section1 {size: 595.3pt 841.9pt; margin: 72.0pt 90.0pt =
+72.0pt 90.0pt; mso-header-margin: 35.4pt; mso-footer-margin: 35.4pt; =
+mso-paper-source: 0; }
+P.MsoNormal {
+	FONT-SIZE: 12pt; MARGIN: 0mm 0mm 0pt; FONT-FAMILY: "Times New Roman"; =
+mso-style-parent: ""; mso-pagination: widow-orphan; =
+mso-fareast-font-family: "Times New Roman"
+}
+LI.MsoNormal {
+	FONT-SIZE: 12pt; MARGIN: 0mm 0mm 0pt; FONT-FAMILY: "Times New Roman"; =
+mso-style-parent: ""; mso-pagination: widow-orphan; =
+mso-fareast-font-family: "Times New Roman"
+}
+DIV.MsoNormal {
+	FONT-SIZE: 12pt; MARGIN: 0mm 0mm 0pt; FONT-FAMILY: "Times New Roman"; =
+mso-style-parent: ""; mso-pagination: widow-orphan; =
+mso-fareast-font-family: "Times New Roman"
+}
+H1 {
+	FONT-SIZE: 16pt; MARGIN: 12pt 0mm 3pt; FONT-FAMILY: Arial; =
+mso-pagination: widow-orphan; mso-style-next: Normal; mso-outline-level: =
+1; mso-font-kerning: 16.0pt
+}
+H2 {
+	FONT-SIZE: 14pt; MARGIN: 12pt 0mm 3pt; FONT-STYLE: italic; FONT-FAMILY: =
+Arial; mso-pagination: widow-orphan; mso-style-next: Normal; =
+mso-outline-level: 2
+}
+A:link {
+	COLOR: blue; TEXT-DECORATION: underline; text-underline: single
+}
+SPAN.MsoHyperlink {
+	COLOR: blue; TEXT-DECORATION: underline; text-underline: single
+}
+A:visited {
+	COLOR: purple; TEXT-DECORATION: underline; text-underline: single
+}
+SPAN.MsoHyperlinkFollowed {
+	COLOR: purple; TEXT-DECORATION: underline; text-underline: single
+}
+DIV.Section1 {
+	page: Section1
+}
+OL {
+	MARGIN-BOTTOM: 0mm
+}
+UL {
+	MARGIN-BOTTOM: 0mm
+}
+</STYLE>
+<!--[if gte mso 9]><xml>
+ <o:shapedefaults v:ext=3D"edit" spidmax=3D"1026"/>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext=3D"edit">
+  <o:idmap v:ext=3D"edit" data=3D"1"/>
+ </o:shapelayout></xml><![endif]--></HEAD>
+<BODY lang=3DEN-US style=3D"tab-interval: 36.0pt" vLink=3Dpurple =
+link=3Dblue>
+<DIV class=3DSection1>
+<H1>Fusion</H1>
+<P class=3DMsoNormal>A potentially fusible speaker detector is one that =
+takes=20
+speech, <I>x</I>, as input and which outputs a real scalar =91score=92 =
+<I>s(x)</I>.=20
+A <I>fusion</I> of <I>N</I> such detectors is also a function from =
+<I>x</I> to a=20
+fused score, namely=20
+<I>s<SUB>fused</SUB>(x)&nbsp;=3D&nbsp;f(s<SUB>1</SUB>(x),s<SUB>2</SUB>(x)=
+,</I><I><SPAN=20
+style=3D"FONT-FAMILY: Symbol; mso-ascii-font-family: 'Times New Roman'; =
+mso-hansi-font-family: 'Times New Roman'; mso-char-type: symbol; =
+mso-symbol-font-family: Symbol"><SPAN=20
+style=3D"mso-char-type: symbol; mso-symbol-font-family: =
+Symbol">=BC</SPAN></SPAN>,s<SUB>N</SUB>(x))</I>.</P>
+<P class=3DMsoNormal><![if =
+!supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></P>
+<P class=3DMsoNormal>There are many different forms that the function =
+<I>f</I> can=20
+take. In cases where the function is dependent on parameters, these =
+parameters=20
+can be trained on some development data. We give MATLAB code for two =
+examples of=20
+simple linear fusion. These differ in the objective function that is =
+used to=20
+train the fusion parameters:</P>
+<P class=3DMsoNormal><![if =
+!supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></P>
+<UL style=3D"MARGIN-TOP: 0mm" type=3Ddisc>
+  <LI class=3DMsoNormal=20
+  style=3D"mso-list: l0 level1 lfo3; tab-stops: list 36.0pt"><A=20
+  =
+href=3D"http://www.dsp.sun.ac.za/~nbrummer/focal/fusion/llrfusion/index.h=
+tm">Linear=20
+  logistic regression fusion</A>:<SPAN style=3D"mso-spacerun: =
+yes">&nbsp;=20
+  </SPAN>This uses a logistic regression optimization objective. It=20
+  simultaneously achieves fusion and <A=20
+  =
+href=3D"http://www.dsp.sun.ac.za/~nbrummer/focal/cllr/calibration/index.h=
+tm">calibration</A>.=20
+  </LI></UL>
+<P class=3DMsoNormal style=3D"MARGIN-LEFT: 18pt"><![if =
+!supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></P>
+<UL style=3D"MARGIN-TOP: 0mm" type=3Ddisc>
+  <LI class=3DMsoNormal=20
+  style=3D"mso-list: l0 level1 lfo3; tab-stops: list 36.0pt"><A=20
+  =
+href=3D"http://www.dsp.sun.ac.za/~nbrummer/focal/fusion/msefusion/index.h=
+tm">Linear=20
+  minimum-MSE fusion</A>: This uses a mean-squared-error optimization =
+objective.=20
+  The discrimination performance of the fusion is similar overall (and =
+perhaps=20
+  better at a specifiable operating point) than the logistic regression =
+fusion.=20
+  This fusion also calibrates to some extent, but not as well as =
+logistic=20
+  regression. Of course, MSE-fused scores can be post-calibrated. =
+</LI></UL>
+<P class=3DMsoNormal><![if =
+!supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></P>
+<P class=3DMsoNormal style=3D"MARGIN-LEFT: 18pt">Here is an <A=20
+href=3D"http://www.dsp.sun.ac.za/~nbrummer/focal/fusion/comparison.htm">e=
+xperimental=20
+comparison</A> between the two fusion methods.</P>
+<P class=3DMsoNormal><![if =
+!supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></P>
+<P class=3DMsoNormal><SPAN=20
+style=3D"mso-spacerun: yes"></SPAN>&nbsp;</P></DIV></BODY></HTML>
